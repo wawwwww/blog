@@ -1,6 +1,18 @@
+{% extends 'base.html.twig' %}
+
 {% block css %}
     {{ parent() }}
-    <a rel="stylesheet" href="/css/homepage/.css"
+    <link rel="stylesheet" href="/css/homepage.css">
 {% endblock %}
 
-{% block title %}list des employés{% endblock %}
+{% block title %}Liste des derniers articles{% endblock %}
+
+{% block body %}
+    <h1>Liste des derniers articles</h1>
+
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.title }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
